@@ -1,5 +1,6 @@
 package fr.imt.coffeemachine.machine.component;
 
+import fr.imt.coffeemachine.machine.exception.MaxVolumeLimitReachedException;
 import fr.imt.coffeemachine.storage.type.CoffeeType;
 
 public class BeanTank extends Tank{
@@ -18,7 +19,7 @@ public class BeanTank extends Tank{
         this.beanCoffeeType = beanCoffeeType;
     }
 
-    public void increaseCoffeeVolumeInTank(double coffeeVolume, CoffeeType coffeeType){
+    public void increaseCoffeeVolumeInTank(double coffeeVolume, CoffeeType coffeeType) throws MaxVolumeLimitReachedException {
         this.increaseVolumeInTank(coffeeVolume);
         this.beanCoffeeType = coffeeType;
     }

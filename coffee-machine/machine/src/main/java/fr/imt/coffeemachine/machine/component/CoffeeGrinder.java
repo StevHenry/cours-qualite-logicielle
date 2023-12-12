@@ -1,5 +1,7 @@
 package fr.imt.coffeemachine.machine.component;
 
+import fr.imt.coffeemachine.machine.exception.MaxVolumeLimitReachedException;
+import fr.imt.coffeemachine.machine.exception.MinVolumeLimitReachedException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,11 +24,11 @@ public class CoffeeGrinder {
      * @return Temps pour moudre le café
      * @throws InterruptedException Exception levée en cas de problèmes lors du sleep par le Thread
      */
-    public double grindCoffee(BeanTank beanTank) throws InterruptedException {
+    public double grindCoffee(BeanTank beanTank) throws InterruptedException, MinVolumeLimitReachedException {
         logger.info("Grinding time : "  +  grindingTime);
         logger.info("Grinding...");
         Thread.sleep(grindingTime);
-        beanTank.increaseVolumeInTank(0.2);
+        beanTank.decreaseVolumeInTank(0.2);
         logger.info("Grinding OK");
         return grindingTime;
     }

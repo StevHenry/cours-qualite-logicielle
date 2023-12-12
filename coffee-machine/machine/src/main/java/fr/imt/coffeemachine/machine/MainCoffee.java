@@ -1,9 +1,6 @@
 package fr.imt.coffeemachine.machine;
 
-import fr.imt.coffeemachine.machine.exception.CannotMakeCremaWithSimpleCoffeeMachine;
-import fr.imt.coffeemachine.machine.exception.CoffeeTypeCupDifferentOfCoffeeTypeTankException;
-import fr.imt.coffeemachine.machine.exception.LackOfWaterInTankException;
-import fr.imt.coffeemachine.machine.exception.MachineNotPluggedException;
+import fr.imt.coffeemachine.machine.exception.*;
 import fr.imt.coffeemachine.storage.FabricCupboardContainer;
 import fr.imt.coffeemachine.storage.container.Container;
 import fr.imt.coffeemachine.storage.container.Cup;
@@ -61,7 +58,9 @@ public class MainCoffee {
         } catch (MachineNotPluggedException e) {
             logger.error(e.getMessage());
             coffeeMachine.plugToElectricalPlug();
-        } catch (CoffeeTypeCupDifferentOfCoffeeTypeTankException | CannotMakeCremaWithSimpleCoffeeMachine e) {
+        } catch (CoffeeTypeCupDifferentOfCoffeeTypeTankException |
+                 CannotMakeCremaWithSimpleCoffeeMachine |
+                 MinVolumeLimitReachedException | MaxVolumeLimitReachedException e) {
             logger.error(e.getMessage());
         }
     }

@@ -1,5 +1,6 @@
 package fr.imt.coffeemachine.machine.component;
 
+import fr.imt.coffeemachine.machine.exception.MinVolumeLimitReachedException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,7 +25,7 @@ public class WaterPump {
      * @return Temps de pompage en millisecondes multiplié par 2
      * @throws InterruptedException Exception levée en cas de problèmes lors du sleep par le Thread
      */
-    public double pumpWater(double waterVolume, WaterTank waterTank) throws InterruptedException {
+    public double pumpWater(double waterVolume, WaterTank waterTank) throws InterruptedException, MinVolumeLimitReachedException {
         double pumpingTime = (waterVolume / pumpingCapacity) * 1000 * 2;
         logger.info("Pumping time : "  +  pumpingTime);
         logger.info("Pumping...");

@@ -1,8 +1,6 @@
 package fr.imt.coffeemachine.machine;
 
-import fr.imt.coffeemachine.machine.exception.CoffeeTypeCupDifferentOfCoffeeTypeTankException;
-import fr.imt.coffeemachine.machine.exception.LackOfWaterInTankException;
-import fr.imt.coffeemachine.machine.exception.MachineNotPluggedException;
+import fr.imt.coffeemachine.machine.exception.*;
 import fr.imt.coffeemachine.storage.FabricCupboardContainer;
 import fr.imt.coffeemachine.storage.container.Container;
 import fr.imt.coffeemachine.storage.container.Cup;
@@ -61,6 +59,10 @@ public class MainEspresso {
             coffeeMachine.plugToElectricalPlug();
         } catch (CoffeeTypeCupDifferentOfCoffeeTypeTankException e) {
             logger.error(e.getMessage());
+        } catch (MinVolumeLimitReachedException e) {
+            throw new RuntimeException(e);
+        } catch (MaxVolumeLimitReachedException e) {
+            throw new RuntimeException(e);
         }
 
     }

@@ -1,10 +1,7 @@
 package fr.imt.coffeemachine.cucumber.steps;
 
 import fr.imt.coffeemachine.machine.CoffeeMachine;
-import fr.imt.coffeemachine.machine.exception.CannotMakeCremaWithSimpleCoffeeMachine;
-import fr.imt.coffeemachine.machine.exception.CoffeeTypeCupDifferentOfCoffeeTypeTankException;
-import fr.imt.coffeemachine.machine.exception.LackOfWaterInTankException;
-import fr.imt.coffeemachine.machine.exception.MachineNotPluggedException;
+import fr.imt.coffeemachine.machine.exception.*;
 import fr.imt.coffeemachine.storage.type.CoffeeType;
 import fr.imt.coffeemachine.storage.container.*;
 import fr.imt.coffeemachine.storage.exception.CupNotEmptyException;
@@ -60,7 +57,9 @@ public class CucumberStepsCoffeeMachineMakeACoffeeTest {
     }
 
     @And("I made a coffee {string}")
-    public void iMadeACoffee(String coffeeType) throws InterruptedException, CupNotEmptyException, LackOfWaterInTankException, MachineNotPluggedException, CoffeeTypeCupDifferentOfCoffeeTypeTankException, CannotMakeCremaWithSimpleCoffeeMachine {
+    public void iMadeACoffee(String coffeeType) throws InterruptedException, CupNotEmptyException,
+            LackOfWaterInTankException, MachineNotPluggedException, CoffeeTypeCupDifferentOfCoffeeTypeTankException,
+            CannotMakeCremaWithSimpleCoffeeMachine, MinVolumeLimitReachedException, MaxVolumeLimitReachedException {
         //On créé un mock de l'objet random
         Random randomMock = Mockito.mock(Random.class, Mockito.withSettings().withoutAnnotations());
         //On vient ensuite stubber la méthode nextGaussian pour pouvoir controler la valeur retournée
