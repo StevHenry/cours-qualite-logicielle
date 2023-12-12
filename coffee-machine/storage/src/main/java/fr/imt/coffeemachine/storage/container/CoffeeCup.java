@@ -7,7 +7,7 @@ public class CoffeeCup extends CoffeeContainer{
         super(capacity, coffeeType);
     }
 
-    public CoffeeCup(Container container, CoffeeType coffeeType) {
-        super(container, coffeeType);
+    public CoffeeCup(Cup cup, CoffeeType coffeeType) {
+        super(cup, coffeeType);
     }
 }

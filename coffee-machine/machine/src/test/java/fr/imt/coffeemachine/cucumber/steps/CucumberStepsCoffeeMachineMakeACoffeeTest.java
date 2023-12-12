@@ -95,6 +95,4 @@ public class CucumberStepsCoffeeMachineMakeACoffeeTest {
 
         MatcherAssert.assertThat(containerWithCoffee.getCoffeeType(), Matchers.is(CoffeeType.valueOf(coffeeType)));
     }
-
-
 }

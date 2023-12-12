@@ -75,7 +75,7 @@ public class CoffeeMachine {
     /**
      * Permet de faire couler un café à partir d'un contenant et d'un type de café
      * Doit retourner une instance d'un objet CoffeeMug ou CoffeeCup quand un Mug ou un Cup est passé en paramètre
-     * Le contenant du café retourné ne doit pas être vide et doit avoir la même capacité que le contenant passsé en paramètre
+     * Le contenant du café retourné ne doit pas être vide et doit avoir la même capacité que le contenant passé en paramètre
      * Le contenant doit également avoir son coffeeType qui est égale au type de café passé en paramètre
      * Le nombre de cafés de la machine doit être incrémenté de 1
      *
@@ -125,11 +125,13 @@ public class CoffeeMachine {
 
         CoffeeContainer coffeeContainer = null;
         if (container instanceof Cup)
-            coffeeContainer = new CoffeeCup(container, coffeeType);
+            coffeeContainer = new CoffeeCup((Cup) container, coffeeType);
         if (container instanceof Mug)
             coffeeContainer = new CoffeeMug((Mug) container, coffeeType);
 
-        coffeeContainer.setEmpty(true);
+        nbCoffeeMade++;
+
+        coffeeContainer.setEmpty(false);
         return coffeeContainer;
     }
 
