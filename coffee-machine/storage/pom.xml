@@ -6,12 +6,12 @@
 
     <parent>
         <artifactId>coffee-machine</artifactId>
-        <groupId>fr.stevenhenry172.coffeemachine</groupId>
+        <groupId>fr.imt.coffeemachine</groupId>
         <version>1.0</version>
     </parent>
 
     <artifactId>storage</artifactId>
-    <groupId>fr.stevenhenry172.coffeemachine.storage</groupId>
+    <groupId>fr.imt.coffeemachine.storage</groupId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
@@ -20,5 +20,4 @@
         <maven.compiler.target>19</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
 </project>
