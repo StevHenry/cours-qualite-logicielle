@@ -1,6 +1,8 @@
 package fr.imt.coffeemachine.component;
 
 import fr.imt.coffeemachine.machine.component.ElectricalResistance;
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -56,6 +58,6 @@ public class ElectricalResistanceTest {
         //Il est parfois préféré car Hamcrest dispose de plus de fonction d'assertion que JUnit 5 notamment sur les listes.
         //Il dispose également d'une sémantique plus explicite que JUnit
         //Hamcrest utilise des matchers, ici: is()
-        assertThat(heatingTimeExpected, is(heatingTimeActual));
+        MatcherAssert.assertThat(heatingTimeExpected, Matchers.is(heatingTimeActual));
     }
 }

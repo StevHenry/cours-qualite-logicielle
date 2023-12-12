@@ -1,6 +1,5 @@
-package fr.imt.coffeemachine;
+package fr.imt.coffeemachine.machine;
 
-import fr.imt.coffeemachine.machine.CoffeeMachine;
 import fr.imt.coffeemachine.machine.exception.CannotMakeCremaWithSimpleCoffeeMachine;
 import fr.imt.coffeemachine.machine.exception.CoffeeTypeCupDifferentOfCoffeeTypeTankException;
 import fr.imt.coffeemachine.machine.exception.LackOfWaterInTankException;

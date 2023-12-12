@@ -12,6 +12,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
 import org.mockito.Mockito;
 
@@ -82,17 +84,17 @@ public class CucumberStepsCoffeeMachineMakeACoffeeTest {
 
     @And("a coffee volume equals to {double}")
     public void aCoffeeVolumeEqualsTo(double coffeeVolume) {
-        assertThat(coffeeVolume, is(containerWithCoffee.getCapacity()));
+        MatcherAssert.assertThat(coffeeVolume, Matchers.is(containerWithCoffee.getCapacity()));
     }
 
     @And("a coffee {string} containing a coffee type {string}")
     public void aCoffeeMugContainingACoffeeType(String containerType, String coffeeType) {
         if ("mug".equals(containerType))
-            assertThat(containerWithCoffee, instanceOf(CoffeeMug.class));
+            MatcherAssert.assertThat(containerWithCoffee, Matchers.instanceOf(CoffeeMug.class));
         if ("cup".equals(containerType))
-            assertThat(containerWithCoffee, instanceOf(CoffeeCup.class));
+            MatcherAssert.assertThat(containerWithCoffee, Matchers.instanceOf(CoffeeCup.class));
 
-        assertThat(containerWithCoffee.getCoffeeType(), is(CoffeeType.valueOf(coffeeType)));
+        MatcherAssert.assertThat(containerWithCoffee.getCoffeeType(), Matchers.is(CoffeeType.valueOf(coffeeType)));
     }
 
 

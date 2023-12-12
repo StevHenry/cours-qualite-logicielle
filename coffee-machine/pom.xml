@@ -12,7 +12,6 @@
     <modules>
         <module>storage</module>
         <module>machine</module>
-        <module>main</module>
     </modules>
 
     <properties>

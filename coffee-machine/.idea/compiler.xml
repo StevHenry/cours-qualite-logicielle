@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="machine" />
-        <module name="main" />
         <module name="storage" />
       </profile>
     </annotationProcessing>
@@ -18,6 +17,7 @@
       <module name="coffee-storage (1)" target="19" />
       <module name="coffee-storage (2)" target="18" />
       <module name="coffeemachine" target="18" />
+      <module name="main" target="19" />
     </bytecodeTargetLevel>
   </component>
 </project>
