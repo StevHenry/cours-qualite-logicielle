@@ -11,13 +11,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="coffee-machine (1) (fr.imt.cours.coffeemachine)" target="19" />
-      <module name="coffee-machine (2) (fr.stevenhenry172.coffeemachine)" target="1.5" />
-      <module name="coffee-storage" target="19" />
-      <module name="coffee-storage (1)" target="19" />
-      <module name="coffee-storage (2)" target="18" />
-      <module name="coffeemachine" target="18" />
-      <module name="main" target="19" />
     </bytecodeTargetLevel>
   </component>
 </project>
