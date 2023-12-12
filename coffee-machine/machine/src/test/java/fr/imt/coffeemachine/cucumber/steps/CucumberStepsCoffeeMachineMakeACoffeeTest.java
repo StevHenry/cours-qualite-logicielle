@@ -95,4 +95,14 @@ public class CucumberStepsCoffeeMachineMakeACoffeeTest {
 
         MatcherAssert.assertThat(containerWithCoffee.getCoffeeType(), Matchers.is(CoffeeType.valueOf(coffeeType)));
     }
+
+    @And("the machine has done no coffee")
+    public void coffeeCountIsZero(){
+        coffeeMachine.setNbCoffeeMade(0);
+    }
+
+    @And("the coffee machine has one coffee counted")
+    public void coffeeCountIsOne(){
+        MatcherAssert.assertThat(coffeeMachine.getNbCoffeeMade(), Matchers.is(1));
+    }
 }
